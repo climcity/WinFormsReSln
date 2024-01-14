@@ -16,16 +16,7 @@ namespace WinFormsReSln
 
         private void InitializeDataGridView()
         {
-            // DataGridView 컨트롤 초기화
-            //dataGridView1.Dock = DockStyle.Fill;
-            //dataGridView1.Width = 100;
-            //dataGridView1.Height = 100;
-            //dataGridView1.Left = 0;
-            //dataGridView1.Top = 0;
-            //dataGridView1.AllowUserToAddRows = false;
-            //dataGridView1.ReadOnly = true;
-            //dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //dataGridView1.MultiSelect = false;
+            setDataGridViewHeight(this.dataGridView1);
 
             // 데이터 소스 생성
             DataTable table = new DataTable();
@@ -67,7 +58,22 @@ namespace WinFormsReSln
         private void ReSln_Load(object sender, EventArgs e)
         {
             this.Location = Utils.outScrn().Bounds.Location;
+            
         }
 
+        private void setDataGridViewHeight(DataGridView obj)
+        {
+            Screen screen = Utils.outScrn();
+
+            // 해당 모니터의 작업 영역의 높이를 가져옵니다.
+            int screenHeight = screen.WorkingArea.Height;
+
+            int newHeight = (int)(screenHeight / 20);
+
+            // 변경된 행의 높이를 새로운 높이로 설정합니다.
+            obj.RowTemplate.Height = newHeight;
+
+            this.txtRowHeight.Text = newHeight.ToString();
+        }
     }
 }
