@@ -33,6 +33,7 @@
             btnPgUp = new Button();
             panel1 = new Panel();
             txtFontSize = new TextBox();
+            txtRowHeight = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -85,10 +86,19 @@
             txtFontSize.Size = new Size(100, 23);
             txtFontSize.TabIndex = 8;
             // 
+            // txtRowHeight
+            // 
+            txtRowHeight.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            txtRowHeight.Location = new Point(652, 340);
+            txtRowHeight.Name = "txtRowHeight";
+            txtRowHeight.Size = new Size(100, 23);
+            txtRowHeight.TabIndex = 8;
+            // 
             // ReSln
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             ClientSize = new Size(784, 561);
+            Controls.Add(txtRowHeight);
             Controls.Add(txtFontSize);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
@@ -107,5 +117,6 @@
         private Button btnPgUp;
         private Panel panel1;
         private TextBox txtFontSize;
+        private TextBox txtRowHeight;
     }
 }
