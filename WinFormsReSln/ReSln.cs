@@ -42,15 +42,16 @@ namespace WinFormsReSln
         private void AdjustFontSize()
         {
             // Get the current screen size
-            //Size screenSize = Screen.PrimaryScreen.Bounds.Size;
             Size screenSize = Utils.outScrn().Bounds.Size;
             // Calculate the font size based on the screen width
             // You can modify this formula as you like
-            float fontSize = screenSize.Width / 100f;
+            float fontSize = float.Round(screenSize.Width / 70f);
             // Create a new font with the calculated size
             Font font = new Font("Tahoma", fontSize);
             // Assign the font to the DataGridView
-            dataGridView1.Font = font;
+            this.dataGridView1.Font = font;
+            this.btnPgDwn.Font = font;
+            this.btnPgUp.Font = font;   
 
             this.txtFontSize.Text = fontSize.ToString();
         }
@@ -68,10 +69,13 @@ namespace WinFormsReSln
             // 해당 모니터의 작업 영역의 높이를 가져옵니다.
             int screenHeight = screen.WorkingArea.Height;
 
-            int newHeight = (int)(screenHeight / 20);
+            int newHeight = (int)(screenHeight / 15);
 
-            // 변경된 행의 높이를 새로운 높이로 설정합니다.
+            // 컬럼의 높이를 설정합니다.
             obj.RowTemplate.Height = newHeight;
+
+            // 행의 높이를 새로운 높이로 설정합니다.
+            obj.ColumnHeadersHeight = newHeight;
 
             this.txtRowHeight.Text = newHeight.ToString();
         }
