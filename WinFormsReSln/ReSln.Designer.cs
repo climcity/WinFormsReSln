@@ -37,6 +37,12 @@
             label1 = new Label();
             label2 = new Label();
             panel2 = new Panel();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            txtReSolution = new TextBox();
+            txtFrmHeight = new TextBox();
+            txtFrmWidth = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -84,49 +90,106 @@
             // 
             // txtFontSize
             // 
-            txtFontSize.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            txtFontSize.Location = new Point(97, 18);
+            txtFontSize.Location = new Point(130, 70);
             txtFontSize.Name = "txtFontSize";
-            txtFontSize.Size = new Size(100, 23);
+            txtFontSize.Size = new Size(92, 23);
             txtFontSize.TabIndex = 8;
+            txtFontSize.TextAlign = HorizontalAlignment.Center;
             // 
             // txtRowHeight
             // 
-            txtRowHeight.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            txtRowHeight.Location = new Point(97, 47);
+            txtRowHeight.Location = new Point(130, 99);
             txtRowHeight.Name = "txtRowHeight";
-            txtRowHeight.Size = new Size(100, 23);
+            txtRowHeight.Size = new Size(92, 23);
             txtRowHeight.TabIndex = 8;
+            txtRowHeight.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(27, 21);
+            label1.Location = new Point(18, 73);
             label1.Name = "label1";
-            label1.Size = new Size(64, 15);
+            label1.Size = new Size(57, 15);
             label1.TabIndex = 9;
-            label1.Text = "FONT SIZE";
+            label1.Text = "Font Size";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 50);
+            label2.Location = new Point(18, 102);
             label2.Name = "label2";
-            label2.Size = new Size(79, 15);
+            label2.Size = new Size(70, 15);
             label2.TabIndex = 9;
-            label2.Text = "ROW HEIGHT";
+            label2.Text = "Row Height";
             // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             panel2.Controls.Add(txtFontSize);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
+            panel2.Controls.Add(txtReSolution);
+            panel2.Controls.Add(txtFrmHeight);
+            panel2.Controls.Add(txtFrmWidth);
             panel2.Controls.Add(txtRowHeight);
             panel2.Controls.Add(label1);
-            panel2.Location = new Point(555, 310);
+            panel2.Location = new Point(526, 310);
             panel2.Name = "panel2";
-            panel2.Size = new Size(200, 89);
+            panel2.Size = new Size(228, 239);
             panel2.TabIndex = 10;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(18, 44);
+            label5.Name = "label5";
+            label5.Size = new Size(106, 15);
+            label5.TabIndex = 9;
+            label5.Text = "Display Resolution";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(18, 160);
+            label4.Name = "label4";
+            label4.Size = new Size(75, 15);
+            label4.TabIndex = 9;
+            label4.Text = "Form Height";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(18, 131);
+            label3.Name = "label3";
+            label3.Size = new Size(71, 15);
+            label3.TabIndex = 9;
+            label3.Text = "Form Width";
+            // 
+            // txtReSolution
+            // 
+            txtReSolution.Location = new Point(130, 41);
+            txtReSolution.Name = "txtReSolution";
+            txtReSolution.Size = new Size(92, 23);
+            txtReSolution.TabIndex = 8;
+            txtReSolution.TextAlign = HorizontalAlignment.Center;
+            // 
+            // txtFrmHeight
+            // 
+            txtFrmHeight.Location = new Point(130, 157);
+            txtFrmHeight.Name = "txtFrmHeight";
+            txtFrmHeight.Size = new Size(92, 23);
+            txtFrmHeight.TabIndex = 8;
+            txtFrmHeight.TextAlign = HorizontalAlignment.Center;
+            // 
+            // txtFrmWidth
+            // 
+            txtFrmWidth.Location = new Point(130, 128);
+            txtFrmWidth.Name = "txtFrmWidth";
+            txtFrmWidth.Size = new Size(92, 23);
+            txtFrmWidth.TabIndex = 8;
+            txtFrmWidth.TextAlign = HorizontalAlignment.Center;
             // 
             // ReSln
             // 
@@ -138,6 +201,7 @@
             Name = "ReSln";
             Text = "ReSln";
             Load += ReSln_Load;
+            Resize += ReSln_Resize;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -155,5 +219,11 @@
         private Label label1;
         private Label label2;
         private Panel panel2;
+        private Label label3;
+        private TextBox txtFrmWidth;
+        private Label label4;
+        private TextBox txtFrmHeight;
+        private Label label5;
+        private TextBox txtReSolution;
     }
 }

@@ -20,5 +20,9 @@ namespace commnLib
             // 폼의 위치를 해당 모니터의 위치로 변경합니다.
             return screen;
         }
+
+        static public string outResolution() {
+            return Utils.outScrn().Bounds.Width.ToString() + " X " + Utils.outScrn().Bounds.Height.ToString();
+        }
     }
 }

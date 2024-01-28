@@ -21,6 +21,14 @@ namespace WinFormsReSln
 
         private void InitializeDataGridView()
         {
+            getData();
+
+        }
+
+        private void setGridViewColumns() { 
+        
+        }
+        private void getData() {
             // 데이터 소스 생성
             DataTable table = new DataTable();
             // 자동증가 값이 되는 컬럼 생성
@@ -34,21 +42,23 @@ namespace WinFormsReSln
             table.Columns.Add("Service Name", typeof(string));
             table.Columns.Add("Form Name", typeof(string));
 
-            table.Rows.Add(null, "AAA", "exam01");
-            table.Rows.Add(null, "BBB", "exam02");
-            table.Rows.Add(null, "CCC", "ReSln");
+            table.Rows.Add(null, "고정크기", "exam01");
+            table.Rows.Add(null, "고정크기 + Anchor", "exam02");
+            table.Rows.Add(null, "해상도 비율 + Anchor", "ReSln");
 
             // DataGridView 컨트롤에 데이터 소스 바인딩
             dataGridView1.DataSource = table;
 
             // DataGridView 컨트롤에 버튼 열 추가
             DataGridViewButtonColumn btnColumn = new DataGridViewButtonColumn();
-            btnColumn.HeaderText = "Form 출력";
+            btnColumn.HeaderText = "실행버튼";
             btnColumn.Name = "buttonColumn";
             int btnColumnIdx = dataGridView1.Columns.Add(btnColumn);
 
+            //컬럼 width 갑  지정
+            DataGridViewColumn column = dataGridView1.Columns[1];
+            column.Width = 200;
         }
-
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

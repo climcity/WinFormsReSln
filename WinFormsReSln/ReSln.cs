@@ -51,7 +51,7 @@ namespace WinFormsReSln
             // Assign the font to the DataGridView
             this.dataGridView1.Font = font;
             this.btnPgDwn.Font = font;
-            this.btnPgUp.Font = font;   
+            this.btnPgUp.Font = font;
 
             this.txtFontSize.Text = fontSize.ToString();
         }
@@ -59,9 +59,12 @@ namespace WinFormsReSln
         private void ReSln_Load(object sender, EventArgs e)
         {
             this.Location = Utils.outScrn().Bounds.Location;
-            
+            outClientSize(sender, e);
+            this.txtReSolution.Text = Utils.outResolution();
+
         }
 
+        
         private void setDataGridViewHeight(DataGridView obj)
         {
             Screen screen = Utils.outScrn();
@@ -78,6 +81,19 @@ namespace WinFormsReSln
             obj.ColumnHeadersHeight = newHeight;
 
             this.txtRowHeight.Text = newHeight.ToString();
+        }
+
+        private void ReSln_Resize(object sender, EventArgs e)
+        {
+           outClientSize(sender, e);
+            this.txtReSolution.Text = Utils.outResolution();
+        }
+
+        private void outClientSize(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+            this.txtFrmWidth.Text = control.Width.ToString();
+            this.txtFrmHeight.Text = control.Height.ToString();
         }
     }
 }
